@@ -10,6 +10,7 @@ async def main() -> None:
     config: Config=load_config()
 
     bot = Bot(token = config.tg_bot.token)
+    # e
     dp = Dispatcher()
 
     # регистрируем Роутеры
