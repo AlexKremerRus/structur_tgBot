@@ -11,7 +11,7 @@ button_2 = KeyboardButton(text='Огурцов 🥒')
 
 # Создаем клавиатуру для кнопок
 
-keyboard = ReplyKeyboardMarkup(keyboard=[[button_1, button_2]])
+keyboard = ReplyKeyboardMarkup(keyboard=[[button_1, button_2]], resize_keyboard=True,one_time_keyboard=True)
 
 
 # Хэндлер обрботки команды Старт
@@ -26,9 +26,9 @@ async def proccess_help_command(message:Message):
 
 @router.message(F.text == 'Собак 🦮' )
 async def answer_dog(message: Message):
-    await message.answer(text=LEXICON_RU['dog'], reply_markup=ReplyKeyboardRemove())
+    await message.answer(text=LEXICON_RU['dog'])
 
 @router.message(F.text == 'Огурцов 🥒' )
 async def answer_cucumber(message: Message):
-    await message.answer(text=LEXICON_RU['cucmber'], reply_markup=ReplyKeyboardRemove())
+    await message.answer(text=LEXICON_RU['cucmber'])
 
